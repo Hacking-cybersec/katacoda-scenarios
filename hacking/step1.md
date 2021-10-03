@@ -25,7 +25,7 @@ On peut d'abord observer la liste des logiciels que l'on peut mettre à jour :
 `apt list --upgradable`{{execute}}
 
 Et puis, si besoin (mais je vous propose de ne pas le faire pour garder les mêmes versions que moi), on peut mettre à jour avec :
-`apt upgrade \[Nom\]`
+`apt upgrade NOM_PAQUET`
 
 ## Naviguer dans les dossiers
 Vous vous êtes sûrement dit "Mais comment est-ce possible qu'on n'ait pas d'interface graphique ? Il manque pas un truc ?"
@@ -39,11 +39,18 @@ En fait, oui, il manque un "truc" : l'affichage graphique. Mais tout le système
 Et là, vous y voyez ceci :
 
 ```
+\home
 ```
 
-Pour ce faire, entrez la commande suivante dans le Terminal (vous pouvez cliquez dessus pour l'entrer automatiquement) :
+C'est similaire au chemin **C:\home** de Windows.
 
-`recon-ng`{{execute}}
+Nous sommes donc dans le dossier principal "\" puis dans le sous dossier home.
+
+Nous pouvons lister ce qui se trouve dans ce dossier actuel, en tapant la commande
+
+`ls`{{execute}}
+
+"ls" vient de "list", on liste donc le contenu.
 
 Une fois recon-ng lancé, nous pouvons lancer l'un de ses nombreux modules comme `whois_pocs`.
 Utilisons donc ce module (à taper une fois entré dans l'interface recon-ng) :
