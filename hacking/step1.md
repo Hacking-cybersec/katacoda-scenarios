@@ -1,10 +1,16 @@
 ## Gestion des mises à jour
 Bien souvent, il convient de faire une mise à jour du dépôt APT pour obtenir la liste des derniers paquets à installer.
-En français, cela signifie qu'il y a par exemple une application MonLogiciel qui est passé en version 2. On demande donc au système de nous chercher les informations sur les versions de ces logiciels. 
+
+En français, cela signifie qu'il y a par exemple une application MonLogiciel qui est passée en version 2. On demande donc au système de nous chercher les informations sur les versions de ces logiciels. 
+
 Pour ce faire, on tape la commande suivante :
 `apt-get update`{{execute}}
 
-**Note :** bien souvent, on tapera "`sudo`" avant de taper cette commande. `Sudo` permet de dire "exécute cette commande **en tant qu'administrateur**". Pourquoi ? parce qu'il peut y avoir **plusieurs utilisateurs sur un même système** et tout le monde n'a pas le droit de tout changer, sinon il risque d'y avoir des soucis. Imaginez comme si c'était à l'école, avec les élèves possédant chacun leur compte, et l'enseignant ayant aussi le sien. Seul l'enseignant à les droits d'administrateur pour modifier des choses importantes. Ce compte administrateur s'appelle aussi "root" sous Linux !
+**Note 1:** la commande apt est propre aux distributions Linux Debian et dérivés. C'est-à-dire Ubuntu, Kali Linux, etc... mais d'autres distributions peuvent utiliser une autre commande pour cela !
+
+**Note 2:** bien souvent, on tapera "`sudo`" avant de taper cette commande. `Sudo` permet de dire "exécute cette commande **en tant qu'administrateur**". Pourquoi ? parce qu'il peut y avoir **plusieurs utilisateurs sur un même système** et tout le monde n'a pas le droit de tout changer, sinon il risque d'y avoir des soucis. Imaginez comme si c'était à l'école, avec les élèves possédant chacun leur compte, et l'enseignant ayant aussi le sien. Seul l'enseignant à les droits d'administrateur pour modifier des choses importantes. Ce compte administrateur s'appelle aussi "root" sous Linux !
+
+
 Si l'on vous dit que vous n'êtes pas "root", c'est que vous n'êtes pas administrateur...
 
 Et même s'il n'y a personne d'autre que nous sur le système, il faut savoir que sous Linux, on peut "associer des comptes" à des logiciels !
