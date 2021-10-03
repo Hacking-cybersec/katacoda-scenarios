@@ -52,41 +52,79 @@ Nous pouvons lister ce qui se trouve dans ce dossier actuel, en tapant la comman
 
 "ls" vient de "list", on liste donc le contenu.
 
-Une fois recon-ng lancé, nous pouvons lancer l'un de ses nombreux modules comme `whois_pocs`.
-Utilisons donc ce module (à taper une fois entré dans l'interface recon-ng) :
+Vous y voyez donc, toujours au format texte, les fichiers et dossiers se trouvant dans ce fichier.
 
-`modules load recon/domains-contacts/whois_pocs`{{execute}}
+Bien, maintenant, changeons de dossier ! Normalement, on aurait qu'à cliquer avec la souris sur un autre dossier. Mais ici, on n'a pas d'interface graphique... donc on va changer notre dossier de travail tout simplement !
 
-**ASTUCE :** vous pouvez voir tous les modules disponibles en tapant `modules load[ESPACE]` suivi de deux fois la touche `TABULATION`.
+Et pour cela, voici venue la commande :
 
-Une fois entré dans le module concerné, définissons la cible avec la commande suivante :
+`cd /`{{execute}}
 
-`options set SOURCE google.com`{{execute}}
+On demande ici de changer de dossier, et on donne le "/". On lui dit donc : change le dossier en /
 
-Il reste à exécuter le module :
+Vous voyez dès lors que le **prompt** change et affiche `root@cyberini:/#` contrairement à `root@cyberini:/home#`. Le système nous indique en fait depuis le début dans quel dossier nous nous trouvons !
 
-`run`{{execute}}
+Faison à nouveau ls : 
+`ls`{{execute}}
 
-Après quelques secondes, vous pourrez apercevoir le résultat suivant (non exhaustif) :
-```
-[...]
-[*] [contact] Tracy Weaver (tracyweaver@google.com) - Whois contact
-[*] URL: http://whois.arin.net/rest/poc/RRV2-ARIN
-[*] [contact] Vamseedhar Reddyvari Raja (vamzee@google.com) - Whois contact
-[*] URL: http://whois.arin.net/rest/poc/VITAL21-ARIN
-[*] [contact] Ben Vitale (vitale@google.com) - Whois contact
-```
+Vous y voyez cette fois beaucoup de dossiers et fichiers. Et devinez quoi : il y a **home** ! Car, pour rappel nous étions avant dans **/home**. Donc en listant ce qu'il y a dans **/**, on y trouve **home**.
+Pour revenir dedans, il suffit d'entrer :
 
-Les contacts trouvés sont automatiquement ajoutés dans la base de données de recon-ng.
-Nous pouvons les voir en tapant la commande suivante :
+`cd /home`{{execute}}
 
-`show contacts`{{execute}}
+Mettant, il reste à comprendre une dernière chose : chemin relatif et chemin absolu.
 
-Nous venons de récupérer une liste publique de contacts que Google et ses collaborateurs ont mentionné dans les enregistrements whois. 
+Un chemin est absolu lorsqu'il commence par **/**. C'est comme dire, sous Windows, C:\mondossier\etc
 
-Maintenant, à vous de jouer ! Essayez avec un autre domaine ! (PS: tous les domaines ne retournent pas de résultats, et les domaines hors ".com" peuvent ne pas fonctionner, car l'outil utilise le registre Internet ARIN (américain))
+Un chemin est relatif, si l'on se base au dossier de travail. Si l'on est par exemple dans C:\mondossier, on peut cliquer sur etc directement. En somme, on peut se rendre dans les sous dossiers. Sous linux c'est pareil.
 
-Envie d'aller plus loin ? Essayez le module recon/companies-multi/whois_miner qui récupère encore plus d'informations en utilisant un nom d'une entreprise comme "Facebook".
+On peut donc créer un dossier :
 
-## Aspects juridiques
-Les exemples montrés sont tous légaux et récupèrent uniquement des données publiques accessibles. Il vous appartient cependant de prendre en considération que l'utilisation de certains outils ou modules sur des sites ou personnes pour découvrir volontairement des informations confidentielles peut engager votre responsabilité.
+`mkdir mondossier`{{execute}}
+
+puis se rendre dedans, soit par le chemin relatif:
+
+`cd mondossier`{{execute}}
+
+ou par le chemin absolu :
+
+`cd /home/mondossier`{{execute}}
+
+La différence est principalement la rapidité. Il faut savoir que pour éviter toute erreur, il est préférable de donner le chemin absolu.
+
+Envie de supprimer un dossier ?
+
+Pas de problème, revenons dans le dossier parent d'abord. Là encore, soit on passe par le chemin absolu : cd /home/, soit on utilise le chemin relatif... Et là, nouvelle commande :
+
+cd ..
+
+Ce n'est pas une erreur, sous Linux ".." indique le dossier parent. On dit donc littérallement : remonter dans le dossier parent.
+Et là, il faut suivre, on peut donc taper à tout moment "pwd" pour voir ou l'on est, et "ls" pour voir ce qu'il y a dans le dossier.
+Puis on peut utiliser le chemin relatif pour supprimer le dossier avec la commande appropriée :
+
+rmdir mondossier
+
+La même procédure avec chemin relatif et absolu s'applique avec les **fichiers**.
+On utilise touch pour créer un fichier (au lieu de mkdir) et rm pour en supprimer un (au lieu de rmdir).
+
+Essayez :
+
+touch monfichier.txt
+
+ls
+
+rm monfichier.txt
+
+ls
+
+Il n'est plus là !
+
+Pour finir, et pour ajouter du contenu au fichier, vous pouvez utiliser l'éditeur en ligne de commande nano :
+
+nano monfichier.txt (remplace touch, car on créé et édite en mêem temps)
+
+CTRL + O et CTRL + X pour sauvegarder et fermer.
+
+On peut le réafficher de la même manière, ou utiliser "cat" pour afficher plus rapidement :
+
+car monfichier.txt
