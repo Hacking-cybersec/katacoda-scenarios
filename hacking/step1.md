@@ -1,8 +1,39 @@
-## Qu'est-ce que la reconnaissance ?
-La reconnaissance est l'une des étapes les plus importantes. Elle consiste à trouver des informations sur une cible. Cela se fait principalement à travers Internet, mais il est aussi possible d'écouter des communications ou de récupérer des documents physiques.
+## Gestion des mises à jour
+Bien souvent, il convient de faire une mise à jour du dépôt APT pour obtenir la liste des derniers paquets à installer.
+En français, cela signifie qu'il y a par exemple une application MonLogiciel qui est passé en version 2. On demande donc au système de nous chercher les informations sur les versions de ces logiciels. 
+Pour ce faire, on tape la commande suivante :
+`apt-get update`{{execute}}
 
-## La reconnaissance en pratique
-L'outil `recon-ng` est dédié à cette étape et apporte beaucoup de fonctionnalités. Par exemple, il permet de découvrir le **propriétaire d'un site web** via les enregistrements **whois**. Ces informations sont notamment fournies par l'exploitant lors de la création d'un nom de domaine auprès d'un [Registraire de nom de domaine](https://fr.wikipedia.org/wiki/Registraire_de_nom_de_domaine). Et bien qu'il existe des solutions de protection de données personnelles dans les enregistrements whois, la plupart des enregistrements contiennent des données accessibles **publiquement**.
+**Note :** bien souvent, on tapera "`sudo`" avant de taper cette commande. `Sudo` permet de dire "exécute cette commande **en tant qu'administrateur**". Pourquoi ? parce qu'il peut y avoir **plusieurs utilisateurs sur un même système** et tout le monde n'a pas le droit de tout changer, sinon il risque d'y avoir des soucis. Imaginez comme si c'était à l'école, avec les élèves possédant chacun leur compte, et l'enseignant ayant aussi le sien. Seul l'enseignant à les droits d'administrateur pour modifier des choses importantes. Ce compte administrateur s'appelle aussi "root" sous Linux !
+Si l'on vous dit que vous n'êtes pas "root", c'est que vous n'êtes pas administrateur...
+
+Et même s'il n'y a personne d'autre que nous sur le système, il faut savoir que sous Linux, on peut "associer des comptes" à des logiciels !
+On peut par exemple demander à ce que MonLogicielNonAutorise soit utilisable avec le compte "nonautorise"...
+
+Bref. Vous avez de ce fait vu le système chercher des mises à jour de paquets.
+Parfait ! Continuons.
+
+Maintenenant, et si besoin, nous pouvons mettre à jour concrètement un logiciel (ou plusieurs) grâce à la dernière version en notre connaisssance.
+
+On peut d'abord observer la liste des logiciels que l'on peut mettre à jour :
+`apt list --upgradable`{{execute}}
+
+Et puis, si besoin (mais je vous propose de ne pas le faire pour garder les mêmes versions que moi), on peut mettre à jour avec :
+`apt upgrade \[Nom\]`
+
+## Naviguer dans les dossiers
+Vous vous êtes sûrement dit "Mais comment est-ce possible qu'on n'ait pas d'interface graphique ? Il manque pas un truc ?"
+En fait, oui, il manque un "truc" : l'affichage graphique. Mais tout le système est là ! L'affichage c'est juste pour faire joli. Nous en tant que geeks chevronnés, on n'a pas besoin de jolies couleurs et d'icônes en forme de dossier...
+
+**À tout moment** le terminal se trouve "dans un dossier". On l'appelle le dossier de travail. Et vous pouvez voir son chemin complet en tapant la commande suivante :
+`pwd`{{execute}}
+
+`pwd` signifie 'print working directory" (affiche le dossier de travail)
+
+Et là, vous y voyez ceci :
+
+```
+```
 
 Pour ce faire, entrez la commande suivante dans le Terminal (vous pouvez cliquez dessus pour l'entrer automatiquement) :
 
