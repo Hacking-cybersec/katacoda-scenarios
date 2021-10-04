@@ -1,18 +1,18 @@
 {
-  "title": "Test d'intrusion basique",
-  "pathwayTitle": "Introduction au Pentesting",
-  "description": "Apprendre les bases d'un test d'intrusion en pratique",
+  "title": "Comprendre la cybersécurité en pratique",
+  "pathwayTitle": "Cybersécurité",
+  "description": "Apprendre les bases de la cybersécurité",
   "difficulty": "facile",
   "time": "20 minutes",
   "details": {
     "steps": [
-      {"title": "Phase 1 - La Reconnaissance",
+      {"title": "Commandes de base sous Linux",
       "text": "step1.md"},
-      {"title": "Phase 2 - Scanning Réseau",
+      {"title": "TODO",
       "text": "step2.md"},
-      {"title": "Phase 3 - Gagner l'accès",
+      {"title": "TODO",
       "text": "step3.md"},
-      {"title": "Phase 4 - Maintenir l'accès & Couvrir les traces",
+      {"title": "TODO",
       "text": "step4.md"}
     ],
     "intro": {
