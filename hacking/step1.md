@@ -1,22 +1,19 @@
 ## Gestion des mises à jour
 Bien souvent, il convient de faire une mise à jour du dépôt APT pour obtenir la liste des derniers paquets à installer.
 
-En français, cela signifie qu'il y a par exemple une application MonLogiciel qui est passée en version 2. On demande donc au système de nous chercher les informations sur les versions de ces logiciels. 
+En français, cela signifie qu'il y a par exemple une application **MonLogiciel** qui est passée en version **2**. On demande donc au système de nous chercher les informations sur les versions de ces logiciels mis à jour. 
 
 Pour ce faire, on tape la commande suivante :
-`apt-get update`{{execute}}
+`apt-get update`
 
-**Note 1:** la commande apt est propre aux distributions Linux Debian et dérivés. C'est-à-dire Ubuntu, Kali Linux, etc... mais d'autres distributions peuvent utiliser une autre commande pour cela !
+**Note 1:** la commande apt est propre aux distributions Linux Debian et dérivés. C'est-à-dire Ubuntu, Kali Linux, etc... mais d'autres distributions peuvent utiliser une autre commande pour cela ! **On ne va pas l'utiliser pour cet exemple**.
 
 **Note 2:** bien souvent, on tapera "`sudo`" avant de taper cette commande. `Sudo` permet de dire "exécute cette commande **en tant qu'administrateur**". Pourquoi ? parce qu'il peut y avoir **plusieurs utilisateurs sur un même système** et tout le monde n'a pas le droit de tout changer, sinon il risque d'y avoir des soucis. Imaginez comme si c'était à l'école, avec les élèves possédant chacun leur compte, et l'enseignant ayant aussi le sien. Seul l'enseignant à les droits d'administrateur pour modifier des choses importantes. Ce compte administrateur s'appelle aussi "root" sous Linux !
 
 
 Si l'on vous dit que vous n'êtes pas "root", c'est que vous n'êtes pas administrateur...
 
-Et même s'il n'y a personne d'autre que nous sur le système, il faut savoir que sous Linux, on peut "associer des comptes" à des logiciels !
-On peut par exemple demander à ce que MonLogicielNonAutorise soit utilisable avec le compte "nonautorise"...
-
-Bref. Vous avez de ce fait vu le système chercher des mises à jour de paquets.
+Vous avez de ce fait vu le système chercher des mises à jour de paquets.
 Parfait ! Continuons.
 
 Maintenenant, et si besoin, nous pouvons mettre à jour concrètement un logiciel (ou plusieurs) grâce à la dernière version en notre connaisssance.
@@ -96,26 +93,26 @@ Envie de supprimer un dossier ?
 
 Pas de problème, revenons dans le dossier parent d'abord. Là encore, soit on passe par le chemin absolu : cd /home/, soit on utilise le chemin relatif... Et là, nouvelle commande :
 
-cd ..
+`cd ..`{{execute}}
 
 Ce n'est pas une erreur, sous Linux ".." indique le dossier parent. On dit donc littérallement : remonter dans le dossier parent.
 Et là, il faut suivre, on peut donc taper à tout moment "pwd" pour voir ou l'on est, et "ls" pour voir ce qu'il y a dans le dossier.
 Puis on peut utiliser le chemin relatif pour supprimer le dossier avec la commande appropriée :
 
-rmdir mondossier
+`rmdir mondossier`{{execute}}
 
 La même procédure avec chemin relatif et absolu s'applique avec les **fichiers**.
 On utilise touch pour créer un fichier (au lieu de mkdir) et rm pour en supprimer un (au lieu de rmdir).
 
 Essayez :
 
-touch monfichier.txt
+`touch monfichier.txt`{{execute}}
 
-ls
+`ls`{{execute}}
 
-rm monfichier.txt
+`rm monfichier.txt`{{execute}}
 
-ls
+`ls`{{execute}}
 
 Il n'est plus là !
 
